@@ -25,12 +25,11 @@ module tb_srff;
       
 	end
 	always #10 sr = sr + 2'b01;
-	always @(clk)
-		$display( "INPUT: clk=%b s=%b r=%b \t OUTPUT: q=%b qb=%b",clk, sr[1], sr[0], q, ~q);
+	
  initial
     begin
-      $monitor("input=%d,select=%d,output=%d",I,S,D);
-      $dumpfile("mux.vcd");
+	    $monitor("input=%d,select=%d,output=%d",sr,q);
+	    $dumpfile("srff.vcd");
       $dumpvars;
       #20 $finish;
     end
