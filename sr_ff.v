@@ -28,7 +28,7 @@ module tb_srff;
 	
  initial
     begin
-	    $monitor("input=%d,select=%d,output=%d",sr,q);
+	    $monitor("input=%d,output=%d",sr,q);
 	    $dumpfile("srff.vcd");
       $dumpvars;
       #20 $finish;
